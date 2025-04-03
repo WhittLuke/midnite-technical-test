@@ -1,0 +1,24 @@
+name: "analytics"
+version: "1.0.0"
+config-version: 2
+
+vars:
+
+  users: "{{ source('raw','users')) }}"
+  bets: "{{ source('raw','bet')) }}"
+  bet_outcome: "{{ source('raw','bet_outcome')) }}"
+  game: "{{ source('raw','game')) }}"
+  fx_rate: "{{ source('raw','fx_rate')) }}"
+
+profile: "analytics"
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
